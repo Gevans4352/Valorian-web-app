@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Valorian Quest</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <link rel="stylesheet" href="./diamondRush.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  </head>
+ <body>
+  <div class="stars"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="all">
+    <a href="./homePage.html" id="home-link" class="home">
+     <i class="fa-solid fa-arrow-left"></i>
+   </a>
+  <h1 class="score">Score: <span id="score"></span></h1>
+  <div class="timer-container">
+        <div class="progress-bar-frame">
+            <div class="progress-bar-fill" id="progressBarFill">
+            </div>
+            <span class="timer-text" id="timer">60</span>
+        </div>
+    </div>
+</div>
+<div id="result-modal" class="modal">
+    <div class="modal-content">
+      <div class="detailsContainer">
+        <h2>Game Over!</h2>
+      </div>
+      <div id="star-container"></div>
+          <p id="stars-message" class="messages"></p>
+          <p id="score-display" class="messages"></p>
+          <p id="coins-display" class="messages"></p>
+          <br>
+        <button class="restartGame"onclick="restartGame()">Play Again</button>
+    </div>
+</div>
+<div id="pause-modal" class="modal">
+    <div class="modal-continentt">
+        <h2>Do you want to leave?</h2>
+        <button id="home-button" class="modal-button" data-tooltip="Leave Game" onclick="leaveGame()"><i class="fa-solid fa-sign-out-alt"></i></button>
+        <button id="restartGame" onclick="restartGame()" data-tooltip="Restart Game" class="modal-button"><i class="fa-solid fa-sync"></i></button>
+        <button id="continue-button" class="modal-button" data-tooltip="Continue Game"onclick="continueGame()"><i class="fa-solid fa-play"></i></button>
+    </div>
+</div>
+<div id="lifeModal" class="modal">
+    <div class="modal-content">
+        <h2 class="detailsContainer">Time's Up!</h2>
+        <br>
+        <p class="detailsContainer">Use a Life Saver to add 5 seconds?</p>
+        <br>
+        <p class="detailsContainer">(You have <span id="diamondCount">0</span> diamonds)</p>
+        <br>
+        <div class="lifeSaver">
+            <button class="useIt" onclick="useLifeSaver()"><i class="fa-solid fa-heart"></i></button>
+            <button onclick="declineLifeSaver()" class="useIt"> <i class="fa-solid fa-circle-xmark"></i></button>
+        </div>
+    </div>
+</div>
+
+<div id="board"></div>
+<script src="./diamondRush.js"></script>
+</body>
+</html>
